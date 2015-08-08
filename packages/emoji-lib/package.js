@@ -19,6 +19,10 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'lib.js',
+
+    'utils/utils.js',
+    'helpers/helpers.js',
+
     'routes/capture.js',
     'routes/results.js',
   ], ['client', 'server']);

@@ -1,1 +1,2 @@
 EMO = {};
+EMO.helpers = {};
