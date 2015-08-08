@@ -1,5 +1,3 @@
-var helpers = EMO.helpers;
-
 Template.capture.events({
   'click #js-capture': function (event, template) {
     function captureSuccess (mediaFiles) {

@@ -1,3 +1,4 @@
+var helpers = EMO.helpers;
 var Speech = Meteor.npmRequire('google-speech-api');
 
 Meteor.methods({
@@ -6,7 +7,7 @@ Meteor.methods({
 
     var opts = {
       clipSize: 10,
-      file: files[i],
+      file: files[0],
       filetype: 'wav',
       key: helpers.getSetting('GOOGLE_API_KEY')
     };
