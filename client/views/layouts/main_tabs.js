@@ -1,3 +1,5 @@
+var i18n = EMO.i18n;
+
 Template.main_tabs.helpers({
   title: function () {
     return {
