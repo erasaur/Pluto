@@ -16,8 +16,6 @@ Package.onUse(function(api) {
   api.imply([
     'ejson',
     'erasaur:meteor-lodash@3.10.0',
-    'accounts-base@1.2.0',
-    'accounts-password@1.1.1',
     'aldeed:collection2@2.3.3',
     'aldeed:simple-schema@1.3.2',
     'fourseven:scss@2.0.0',
