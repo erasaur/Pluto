@@ -12,4 +12,23 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
+
+  api.imply([
+    'ejson',
+    'erasaur:meteor-lodash@3.10.0',
+    'accounts-base@1.2.0',
+    'accounts-password@1.1.1',
+    'aldeed:collection2@2.3.3',
+    'aldeed:simple-schema@1.3.2',
+    'fourseven:scss@2.0.0',
+    'iron:router@1.0.7',
+    'mdg:reload-on-resume',
+    'meteoric:ionic@0.1.17',
+    'meteoric:ionic-sass@0.1.9',
+    'meteoric:ionicons-sass@0.1.6',
+    'meteorhacks:fast-render@2.3.2',
+    'meteorhacks:subs-manager@1.3.0',
+    'reactive-var',
+    'tap:i18n@1.4.1'
+  ]);
 });
