@@ -12,4 +12,9 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
+
+  api.imply([
+    'emoji-deps',
+    'emoji-lib'
+  ]);
 });

@@ -12,4 +12,14 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
+
+  api.use([
+    'iron:router@1.0.7'
+  ], ['client', 'server']);
+
+  api.addFiles([
+    'lib.js',
+    'routes/capture.js',
+    'routes/results.js',
+  ], ['client', 'server']);
 });
