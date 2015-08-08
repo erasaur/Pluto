@@ -22,4 +22,6 @@ Package.onUse(function(api) {
     'routes/capture.js',
     'routes/results.js',
   ], ['client', 'server']);
+
+  api.export('EMO', ['client', 'server']);
 });
