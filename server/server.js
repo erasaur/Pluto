@@ -1,3 +1,5 @@
+var Speech = Meteor.npmRequire('google-speech-api');
+
 Meteor.methods({
   'audioToText': function (files) {
     check(files, [Object]);
@@ -9,7 +11,7 @@ Meteor.methods({
       key: helpers.getSetting('GOOGLE_API_KEY')
     };
 
-    speech(opts, function (err, results) {
+    Speech(opts, function (err, results) {
       console.log(results);
       // [{result: [{alternative: [{transcript: '...'}]}]}]
     });

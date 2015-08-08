@@ -1,5 +1,4 @@
 var helpers = EMO.helpers;
-var Speech = Meteor.npmRequire('google-speech-api');
 
 Template.capture.events({
   'click #js-capture': function (event, template) {
