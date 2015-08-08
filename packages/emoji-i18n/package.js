@@ -13,6 +13,10 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
 
-  api.use(['tap:i18n@1.4.1'], ['client', 'server']);
+  api.use([
+    'emoji-lib',
+    'tap:i18n@1.4.1'
+  ], ['client', 'server']);
+
   api.addFiles('i18n.js', ['client', 'server']);
 });
