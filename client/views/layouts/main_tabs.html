@@ -1,13 +1,13 @@
 <template name="main_tabs">
   {{#if isAndroid}}
     {{#ionTabs style="android" class="tabs-positive"}}
-      {{> ionTab title=title.capture path="capture" icon="android-home"}}
-      {{> ionTab title=title.results path="results" icon="android-star"}}
+      {{> ionTab title="Capture" path="capture" icon="android-home"}}
+      {{> ionTab title="Results" path="results" icon="android-star"}}
     {{/ionTabs}}
   {{else}}
     {{#ionTabs style="ios" class="tabs-positive"}}
-      {{> ionTab title=title.capture path="capture" iconOff="ios-home-outline" iconOn="ios-home"}}
-      {{> ionTab title=title.results path="results" iconOff="ios-star-outline" iconOn="ios-star"}}
+      {{> ionTab title="Capture" path="capture" iconOff="ios-home-outline" iconOn="ios-home"}}
+      {{> ionTab title="Results" path="results" iconOff="ios-star-outline" iconOn="ios-star"}}
     {{/ionTabs}}
   {{/if}}
 </template>

@@ -26,7 +26,6 @@ Package.onUse(function(api) {
     'meteoric:ionicons-sass@0.1.6',
     'meteorhacks:fast-render@2.3.2',
     'meteorhacks:subs-manager@1.3.0',
-    'reactive-var',
-    'tap:i18n@1.4.1'
+    'reactive-var'
   ]);
 });

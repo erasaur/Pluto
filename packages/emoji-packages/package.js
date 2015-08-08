@@ -15,7 +15,6 @@ Package.onUse(function(api) {
 
   api.imply([
     'emoji-deps',
-    'emoji-lib',
-    'emoji-i18n'
+    'emoji-lib'
   ]);
 });
