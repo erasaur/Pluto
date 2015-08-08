@@ -1,1 +1,2 @@
-// Write your package code here!
+EMO = {};
+EMO.i18n = {};
