@@ -1,0 +1,1 @@
+Umbrella package for all emoji-project packages
