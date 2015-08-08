@@ -14,6 +14,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
 
   api.use([
+    'erasaur:meteor-lodash@3.10.0',
     'iron:router@1.0.7'
   ], ['client', 'server']);
 
