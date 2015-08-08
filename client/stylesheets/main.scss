@@ -1,11 +1,26 @@
+$nav_height: 50px;
+
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
 
+
+
+.nav {
+  height: $nav_height;
+}
+
+.btn-wrap {
+  padding-top: 224px;
+}
+
 #bg {
+  z-index: -99;
   position: absolute;
 }
 
-#btn {
+button#btn {
+  border: none;
+  background: none;
   z-index: 9999; 
   width: 130px;
   height: 130px; 
