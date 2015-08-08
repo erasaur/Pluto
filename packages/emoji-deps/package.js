@@ -14,6 +14,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
 
   api.imply([
+    'check',
     'ejson',
     'erasaur:meteor-lodash@3.10.0',
     'aldeed:collection2@2.3.3',
@@ -25,6 +26,7 @@ Package.onUse(function(api) {
     'meteoric:ionic-sass@0.1.9',
     'meteoric:ionicons-sass@0.1.6',
     'meteorhacks:fast-render@2.3.2',
+    'meteorhacks:npm@1.4.0',
     'meteorhacks:subs-manager@1.3.0',
     'reactive-var'
   ]);
