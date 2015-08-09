@@ -10,7 +10,7 @@ Meteor.startup(function() {
 });
 
 Meteor.methods({
-  'audioToText': function (files) {
+  audioToText: function (files) {
     check(files, [Object]);
 
     var opts = {
@@ -32,22 +32,20 @@ Meteor.methods({
     });
     return future.wait();
   },
-  //Converts valid text to emoji
-  'textToUni': function (textString) {
-    var textArray = "I RODE A CAR TODAY".toUpperCase().split(" ");
-    var returnContent = "";
-    //var ucodes = []
-    textArray.forEach(function(i){
-      i = i.trim();
-      if (typeof dict[i] !== 'undefined') {
-        returnString += "\\" +dict[i] + " ";
+  // converts valid text to emoji
+  textToUni: function (textString) {
+    var wordArray = textString.toUpperCase().split(' ');
+    var result = '';
+    //var ucodes = [];
+
+    wordArray.forEach(function (word) {
+      word = word.trim();
+
+      if (_.has(dict, word)) {
+        result += '\\' + dict[word] + ' '; // append unicode value to result
       }
     });
-    if (returnContent) {
-      return returnContent;
-    }
-    else {
-      return textString;
-    }
+
+    return result || textString; // return original string if no emoji's match
   }
 });
