@@ -1,0 +1,24 @@
+<template name="main_side_menu">
+  <div class="bar bar-header bar-dark">
+    <h1 class="title">Navigation</h1>
+  </div>
+  <div class="content has-header">
+    <div class="list">
+      <a href="{{pathFor route='capture'}}" class="item item-icon-left" data-ion-menu-close>
+        {{#if isAndroid}}
+          {{> ionIcon icon="android-microphone"}}
+        {{else}}
+          {{> ionIcon icon="ios-mic"}}
+        {{/if}} 
+        Capture
+      </a>
+      <a href="{{pathFor route='results'}}" class="item item-icon-left" data-ion-menu-close>
+        {{#if isAndroid}}
+          {{> ionIcon icon="android-list"}}
+        {{else}}
+          {{> ionIcon icon="ios-list"}}
+        {{/if}} Results
+      </a>
+    </div>
+  </div>
+</template>

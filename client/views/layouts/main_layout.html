@@ -1,9 +1,20 @@
 <template name="main_layout">
   {{#ionBody}}
-    {{> ionNavBar class="bar-transparent"}}
+    {{#ionSideMenuContainer}}
+      {{#ionSideMenus}}
+        {{#ionSideMenu}}
+          {{> main_side_menu}}
+        {{/ionSideMenu}}
+      {{/ionSideMenus}}
 
-    {{#ionNavView}}
-      {{> yield}}
-    {{/ionNavView}}
+      {{#ionSideMenuContent}}
+        {{> ionNavBar class="bar-transparent"}}
+
+        {{#ionNavView}}
+          {{> yield}}
+        {{/ionNavView}}
+
+      {{/ionSideMenuContent}}
+    {{/ionSideMenuContainer}}
   {{/ionBody}}
 </template>
