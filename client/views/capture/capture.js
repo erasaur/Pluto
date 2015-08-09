@@ -9,7 +9,7 @@ Template.capture.events({
             okText: 'Ok'
           });
         } else {
-          console.log(results);
+          console.log(result);
           Router.go('results');
         }
       });
