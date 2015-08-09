@@ -33,22 +33,30 @@ Meteor.methods({
     return future.wait();
   },
   // converts valid text to emoji
-  textToUni: function (textString) {
+  textToUnicode: function (textString) {
+    check(textString, String);
+
     var wordArray = textString.toUpperCase().split(' ');
     var result = '';
+    var fail = true;
     //var ucodes = [];
 
     wordArray.forEach(function (word) {
-      word = word.trim();
+      word = word.replace(/\s/g, '');
 
       if (_.has(dict, word)) {
+        fail = false;
         //result += '\\' + dict[word].unified + ' '; // append unicode value to result
-        result += dict[word].image + ' ';
+        result += '<img src="https://raw.githubusercontent.com/github/gemoji/master/images/emoji/unicode/' + dict[word].image + '">';
       } else {
         result += word; // append original text
       }
+      result += ' ';
     });
 
-    return result || textString; // return original string if no emoji's match
+    return {
+      unicodeString: result || textString, // return original string if no emoji's match
+      fail: fail // fail if ALL words have no matching emoji
+    };
   }
 });
