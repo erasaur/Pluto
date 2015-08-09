@@ -40,7 +40,7 @@ Template.capture.events({
           //   }
           // });
 
-          Router.go('results', { query: 'text=' + result });
+          Router.go('results', { query: 'text=' + encodeURIComponent(result) });
         }
       });
     }
