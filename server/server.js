@@ -6,7 +6,7 @@ var Future = Meteor.npmRequire('fibers/future');
 var dict = {};
 
 Meteor.startup(function() {
-  Meteor.call('makeDictionary', JSON.parse(Assets.getText('/private/emoji_processed.json')));
+  Meteor.call('makeDictionary', JSON.parse(Assets.getText('emoji_processed.json')));
 });
 
 Meteor.methods({
