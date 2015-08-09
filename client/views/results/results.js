@@ -25,7 +25,10 @@ Template.results.onCreated(function () {
         showError();
       } else {
         if (result[0] === '\\') {
-          newResult.emoji = result;
+
+          console.log(result)
+
+          newResult.emoji = twemoji.parse(result.slice(1));
           self._results.set(newResult);
 
           // save to local persistent storage
