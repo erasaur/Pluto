@@ -23,6 +23,8 @@ Package.onUse(function(api) {
 
     'utils/utils.js',
     'helpers/helpers.js',
+    'helpers/routes.js',
+    'helpers/storage.js',
 
     'routes/capture.js',
     'routes/results.js',
