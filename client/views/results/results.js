@@ -8,11 +8,12 @@ Template.results.onCreated(function () {
   self._loading = new ReactiveVar(false);
   self._results = new ReactiveVar();
 
-  var text = decodeURIComponent(routes.query('text'));
+  var text = routes.query('text');
 
   console.log(text);
 
   if (text) {
+    text = decodeURIComponent(text);
     self._loading.set(true);
 
     Meteor.call('textToUni', text, function (error, result) {
