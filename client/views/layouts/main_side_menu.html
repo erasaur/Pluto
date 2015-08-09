@@ -4,7 +4,7 @@
   </div>
   <div class="content has-header">
     <div class="list">
-      <a href="{{pathFor route='capture'}}" class="item item-icon-left" data-ion-menu-close>
+      <a href="{{pathFor route='capture'}}" class="item item-icon-left side-item " data-ion-menu-close>
         {{#if isAndroid}}
           {{> ionIcon icon="android-microphone"}}
         {{else}}
@@ -12,7 +12,7 @@
         {{/if}} 
         Capture
       </a>
-      <a href="{{pathFor route='results'}}" class="item item-icon-left" data-ion-menu-close>
+      <a href="{{pathFor route='results'}}" class="item item-icon-left side-item " data-ion-menu-close>
         {{#if isAndroid}}
           {{> ionIcon icon="android-list"}}
         {{else}}
