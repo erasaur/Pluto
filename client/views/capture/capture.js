@@ -1,13 +1,13 @@
 var log = EMO.helpers.log;
 
 Template.capture.onCreated(function () {
-  this.results = new ReactiveVar();
+  this._loading = new ReactiveVar();
 });
 
 Template.capture.helpers({
-  results: function () {
+  loadingResults: function () {
     var template = Template.instance();
-    return template.results.get();
+    return template._loading.get();
   }
 });
 
@@ -22,11 +22,30 @@ Template.capture.events({
     }
 
     function captureSuccess (mediaFiles) {
-      Meteor.call('audioToText', mediaFiles, function (error, result) {
+      template._loading.set(true);
+
+      Meteor.call('audioToText', mediaFiles, function (error, text) {
         if (error) {
           showError();
         } else {
-          Router.go('results', {}, { query: 'text=' + encodeURIComponent(result) });
+          Meteor.call('textToUnicode', text, function (error, result) {
+            if (error) {
+              showError();
+            } else {
+              console.log(result.unicodeString);
+              console.log(encodeURIComponent(result.unicodeString));
+
+              var query = 'original=' + encodeURIComponent(text) +
+                          '&unicode=' + encodeURIComponent(result.unicodeString);
+
+              if (result.fail) {
+                query += '&fail=1';
+              }
+
+              Router.go('results', {}, { query: query });
+            }
+            template._loading.set(false);
+          });
         }
       });
     }

@@ -3,44 +3,40 @@
 
   {{#ionView}}
     {{#ionContent}}
-      {{#if loadingResults}}
-        {{> loading}}
-      {{else}}
-        {{#if results.original}}
-          <div class="padded row">
-          	<div class="col">
-          		<div class="panel original">
-            		<h4 class="panel-title">You Said:</h4>
-            		<p>{{results.original}}</p>
-            	</div> 
+      {{#if results.original}}
+        <div class="padded row">
+        	<div class="col">
+        		<div class="panel original">
+          		<h4 class="panel-title">You Said:</h4>
+          		<p>{{results.original}}</p>
+          	</div> 
+        	</div>
+        	<div class="col">
+        		<div class="panel results">
+          		<h4 class="panel-title">Emoji translation:</h4>
+              {{#if results.emoji}}
+          		  <p>{{{results.emoji}}}</p>
+              {{else}}
+                <p>{{results.original}}</p>
+                <p><small>(We couldn't find a match 😞)</small></p>
+              {{/if}}
           	</div>
-          	<div class="col">
-          		<div class="panel results">
-            		<h4 class="panel-title">Emoji translation:</h4>
-                {{#if results.emoji}}
-            		  <p>{{{results.emoji}}}</p>
-                {{else}}
-                  <p>{{results.original}}</p>
-                  <p><small>(We couldn't find a match 😞)</small></p>
-                {{/if}}
-            	</div>
-            </div>
           </div>
-        {{/if}}
-
-        <div class="padded">
-          {{#if past_results.length}}
-            {{#each past_results}}
-              <div class="panel">
-                <h5 class="panel-title">Emoji translation</h5>
-                <p>{{original}}</p>
-              </div>
-            {{/each}}
-          {{else}}
-            No past results to show.
-          {{/if}}
         </div>
       {{/if}}
+
+      <div class="padded">
+        {{#if past_results.length}}
+          {{#each past_results}}
+            <div class="panel">
+              <h5 class="panel-title">{{{emoji}}}</h5>
+              <p>{{original}}</p>
+            </div>
+          {{/each}}
+        {{else}}
+          No past results to show.
+        {{/if}}
+      </div>
     {{/ionContent}}
   {{/ionView}}
 </template>

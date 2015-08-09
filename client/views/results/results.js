@@ -5,54 +5,39 @@ var log = helpers.log;
 
 Template.results.onCreated(function () {
   var self = this;
-  self._loading = new ReactiveVar(false);
   self._results = new ReactiveVar();
 
-  var text = routes.query('text');
+  var original = routes.query('original');
+  var unicode = routes.query('unicode');
+  var fail = routes.query('fail');
 
-  console.log(text);
+  console.log(original, unicode);
 
-  if (text) {
-    text = decodeURIComponent(text);
-    self._loading.set(true);
+  if (original) {
+    unicode = decodeURIComponent(unicode);
 
-    Meteor.call('textToUni', text, function (error, result) {
-      var newResult = {
-        original: text
-      };
+    var newResult = {
+      original: original
+    };
 
-      if (error) {
-        showError();
-      } else {
-        // if (result[0] === '\\') {
-        if (result.indexOf('png') > -1) {
+    // if (result[0] === '\\') {
+    if (!fail) {
+      newResult.emoji = unicode;
+      self._results.set(newResult);
 
-          console.log(result)
+      // save to local persistent storage
+      storage.add(newResult);
+    }
+    else {
+      log('emoji translation failed bro. use gtranslate using language: ' + Session.get('preferred_language'));
 
-          newResult.emoji = 'https://raw.githubusercontent.com/github/gemoji/master/images/emoji/unicode/' + result;
-          self._results.set(newResult);
-
-          // save to local persistent storage
-          storage.set(newResult);
-        }
-        else {
-          log('emoji translation failed bro. use gtranslate using language: ' + Session.get('preferred_language'));
-
-          // TODO: translate with google translate
-          self._results.add(newResult);
-        }
-
-        self._loading.set(false);
-      }
-    });
+      // TODO: translate with google translate
+      self._results.set(newResult);
+    }
   }
 });
 
 Template.results.helpers({
-  loadingResults: function () {
-    var template = Template.instance();
-    return template._loading.get();
-  },
   results: function () {
     var template = Template.instance();
     return template._results.get();
