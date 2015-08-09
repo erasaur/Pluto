@@ -35,32 +35,69 @@ Meteor.methods({
   // converts valid text to emoji
   textToUnicode: function (textString) {
     check(textString, String);
-
+    if (_.intersection(textString, ["food", "", "hungry"]).length) {
+      result = '&#x1F372';
+      return {
+        unicodeString: result || textString, // return original string if no emoji's match
+        fail: fail // fail if ALL words have no matching emoji
+      };
+    }
+    else if (_.intersection(textString, ["angry", "frustrated", "mad"]).length) {
+      result = '&#x1F621';
+      return {
+        unicodeString: result || textString, // return original string if no emoji's match
+        fail: fail // fail if ALL words have no matching emoji
+      };
+    }
+    else if (_.intersection(textString, ["happy", "excited"]).length) {
+      result = '&#x1F600';
+      return {
+        unicodeString: result || textString, // return original string if no emoji's match
+        fail: fail // fail if ALL words have no matching emoji
+      };
+    }
+    else if (_.intersection(textString, ["sad", "disappointed"]).length) {
+      result = '&#x1F623';
+      return {
+        unicodeString: result || textString, // return original string if no emoji's match
+        fail: fail // fail if ALL words have no matching emoji
+      };
+    }
+    else {
     var wordArray = textString.toUpperCase().split(' ');
     var result = '';
     var upper = '';
     var fail = true;
     //var ucodes = [];
 
-    wordArray.forEach(function (word) {
-      word = word.replace(/\s/g, '');
-      upper = word.toUpperCase();
+      wordArray.forEach(function (word) {
+        word = word.replace(/\s/g, '');
+        upper = word.toUpperCase();
 
-      if (_.has(dict, upper)) {
-        fail = false;
-        //result += '\\' + dict[upper].unified + ' '; // append unicode value to result
-        result += '&#x' + dict[upper].unified + ';';
-      } else {
-        result += word; // append original text
-      }
-      result += ' ';
-    });
+        var temp = '';
+        _.each(dict, function (emoji, name) {
+          if (name.indexOf(upper) > -1) {
+            temp = emoji;
+            return;
+          }
+        });
 
-    console.log(result || textString);
+        if (temp) {
+          fail = false;
+          //result += '\\' + dict[upper].unified + ' '; // append unicode value to result
+          result += '&#x' + dict[upper].unified + ';';
+        } else {
+          result += word; // append original text
+        }
+        result += ' ';
+      });
 
-    return {
-      unicodeString: result || textString, // return original string if no emoji's match
-      fail: fail // fail if ALL words have no matching emoji
-    };
+      console.log(result || textString);
+
+      return {
+        unicodeString: result || textString, // return original string if no emoji's match
+        fail: fail // fail if ALL words have no matching emoji
+      };
+    }
   }
 });
