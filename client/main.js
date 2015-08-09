@@ -1,5 +1,5 @@
 if (Meteor.isCordova) {
-  var log = EMO.utils.log;
+  var log = EMO.helpers.log;
 
   Meteor.startup(function () {
     navigator.globalization.getPreferredLanguage(
