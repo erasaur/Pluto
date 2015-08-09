@@ -3,14 +3,26 @@ $nav_height: 50px;
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
 
-
+@mixin calc($key, $value) {
+  #{$key}: -webkit-calc(#{$value});
+  #{$key}: -moz-calc(#{$value});
+  #{$key}: calc(#{$value});
+}
 
 .nav {
   height: $nav_height;
 }
 
-.btn-wrap {
-  padding-top: 224px;
+.nav-view-transition-ios.nav-view-direction-forward, 
+.nav-view-transition-ios.nav-view-direction-back {
+  background: transparent;
+}
+
+.bar.bar-transparent {
+  background: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  height: $nav_height;
 }
 
 #bg {
@@ -18,12 +30,18 @@ $nav_height: 50px;
   position: absolute;
 }
 
-button#btn {
-  border: none;
+.button-capture-container {
+  @include calc("padding-top", "40% + #{$nav_height}");
+}
+
+.button-capture {
   background: none;
-  z-index: 9999; 
-  width: 130px;
-  height: 130px; 
-  margin: 0 auto; 
+  border: none;
+  width: 100%;
+  margin: 0 auto;
   display: block;
+}
+
+.button-capture img {
+  width: 230px;
 }
