@@ -50,7 +50,12 @@ body {
   // border-radius: 50%;
   // background-color: rgba(84, 212, 222, 0.9);
   // color: #fff;
-  background-image: url('assets/microphone.png');
+  z-index: 999;
+  background-image: url('assets/microphone.svg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.button-capture:active {
+  background-color: #000 !important;
 }
