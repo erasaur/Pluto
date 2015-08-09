@@ -37,7 +37,7 @@ Meteor.methods({
     check(textString, String);
 
     if (_.contains(textString, 'meteor')) {
-      result = '&#1F46B &#2764 $#1F311';
+      result = '&#x1F46B; &#x2764; &#x1F320;';
       return {
         unicodeString: result || textString, // return original string if no emoji's match
         fail: fail // fail if ALL words have no matching emoji
@@ -61,12 +61,17 @@ Meteor.methods({
       upper = word.toUpperCase();
 
       var temp;
-      _.each(dict, function (emoji, name) {
-        var regex = new RegExp('\\b' + upper + '\\b');
 
-        if (regex.test(name) || name === upper) {
+      _.each(dict, function (emoji, name) {
+        if (upper === name) {
           temp = emoji;
           return false;
+        }
+
+        var regex = new RegExp('\\b' + upper + '\\b');
+
+        if (regex.test(name)) {
+          temp = emoji;
         }
       });
 
