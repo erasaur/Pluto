@@ -13,6 +13,10 @@ $nav_height: 50px;
   height: $nav_height;
 }
 
+.has_header {
+  top: 0;
+}
+
 .nav-view-transition-ios.nav-view-direction-forward, 
 .nav-view-transition-ios.nav-view-direction-back {
   background: transparent;
