@@ -9,12 +9,12 @@ $nav_height: 50px;
   #{$key}: calc(#{$value});
 }
 
-.nav {
-  height: $nav_height;
+body {
+  background-image: url('assets/glossy_background.png');
 }
 
-.has_header {
-  top: 0;
+.nav {
+  height: $nav_height;
 }
 
 .nav-view-transition-ios.nav-view-direction-forward, 
@@ -27,11 +27,6 @@ $nav_height: 50px;
   border: none;
   background-color: rgba(255, 255, 255, 0.2);
   height: $nav_height;
-}
-
-#bg {
-  z-index: -99;
-  position: absolute;
 }
 
 .button-capture-container {
