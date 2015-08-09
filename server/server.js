@@ -35,29 +35,8 @@ Meteor.methods({
   // converts valid text to emoji
   textToUnicode: function (textString) {
     check(textString, String);
-    if (_.intersection(textString, ["food", "", "hungry"]).length) {
-      result = '&#x1F372';
-      return {
-        unicodeString: result || textString, // return original string if no emoji's match
-        fail: fail // fail if ALL words have no matching emoji
-      };
-    }
-    else if (_.intersection(textString, ["angry", "frustrated", "mad"]).length) {
-      result = '&#x1F621';
-      return {
-        unicodeString: result || textString, // return original string if no emoji's match
-        fail: fail // fail if ALL words have no matching emoji
-      };
-    }
-    else if (_.intersection(textString, ["happy", "excited"]).length) {
-      result = '&#x1F600';
-      return {
-        unicodeString: result || textString, // return original string if no emoji's match
-        fail: fail // fail if ALL words have no matching emoji
-      };
-    }
-    else if (_.intersection(textString, ["sad", "disappointed"]).length) {
-      result = '&#x1F623';
+    if (_.intersection(textString, "We love Meteor") {
+      result = '&#1F46B &#2764 $#1F311';
       return {
         unicodeString: result || textString, // return original string if no emoji's match
         fail: fail // fail if ALL words have no matching emoji
