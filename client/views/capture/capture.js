@@ -9,6 +9,14 @@ Template.capture.events({
             okText: 'Ok'
           });
         } else {
+          var words = Meteor.call('textToUni', result);
+          if words[0]=='\\' {
+            //set the CSS Content
+          }
+          else {
+            //do translation
+          }
+
           Router.go('results');
         }
       });
@@ -23,5 +31,9 @@ Template.capture.events({
     }
 
     navigator.device.capture.captureAudio(captureSuccess, captureError, { duration: 10 });
+    navigator.globalization.getPreferredLanguage(
+        function (language) {alert('language: ' + language.value + '\n');},
+        function () {alert('Error getting language\n');}
+    );
   }
 });

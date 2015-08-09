@@ -21,18 +21,12 @@ Meteor.methods({
     };
 
     var future = new Future();
-
     Speech(opts, function (err, results) {
       console.log(err, results);
-
       // results = [ { result: [ { alternative: [Object], final: true } ], result_index: 0 } ]
-
       results = utils.get(results[0], 'result[0]alternative'); //  [ { transcript: 'chicken noodle soup', confidence: 0.9806636 }, ... ]
-
       console.log(results[0].transcript);
-
       future.return(results[0].transcript); // 'chicken noodle soup'
-
       // console.log(results[results.result_index]);
       // console.log(results[0].result[0].alternative);
     });
