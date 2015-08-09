@@ -3,15 +3,24 @@ Template.capture.events({
     function captureSuccess (mediaFiles) {
       Meteor.call('audioToText', mediaFiles, function (error, result) {
         if (error) {
-          IonPopup.alert('Error', 'There was an error processing the audio', 'Ok');
+          IonPopup.alert({
+            title: 'Error',
+            template: 'There was an error processing the audio',
+            okText: 'Ok'
+          });
         } else {
+          console.log(results);
           Router.go('results');
         }
       });
     }
 
     function captureError (error) {
-      IonPopup.alert('Error', 'There was an error processing the audio', 'Ok');
+      IonPopup.alert({
+        title: 'Error',
+        template: 'There was an error processing the audio',
+        okText: 'Ok'
+      });
     }
 
     navigator.device.capture.captureAudio(captureSuccess, captureError, { duration: 10 });

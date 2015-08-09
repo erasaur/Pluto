@@ -60,11 +60,13 @@ body {
   // border-radius: 50%;
   // background-color: rgba(84, 212, 222, 0.9);
   // color: #fff;
-  background-image: url('assets/microphone.png');
+  z-index: 999;
+  background-image: url('assets/microphone.svg');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+<<<<<<< HEAD
 /* results template styles */
 
 .pluto {
@@ -95,3 +97,8 @@ body {
   color: #fff;
   background-color: rgba(255, 255, 255, 0.2);
 }
+=======
+.button-capture:active {
+  background-color: #000 !important;
+}
+>>>>>>> b0e956f0b7f4ba030dc50559f93025c28342e2d0
