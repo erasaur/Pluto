@@ -3,7 +3,26 @@
 
   {{#ionBody}}
     {{#ionContent}}
-      <img src="assets/main_page.png">
+      <!-- <img src="assets/main_page.png" width="100%" > -->
+      <div class="pluto">
+      	<h1 class="pluto">Pluto-tize!</h1>
+      </div>
+      <div class="row">
+      	<div class="col">
+      		<div class="original">
+      		<h4 class="original-title">You Said</h4>
+      		<p>{{original_speech}}</p>
+      	</div> 
+      	</div>
+      	<div class="col">
+      		<div class="results">
+      		<h4 class="results-title">Emoji translation</h4>
+      		<p>{{emoticon_translation}}</p>
+      	</div>
+      	</div>
+      </div>
+      
+
     {{/ionContent}}
 
     {{> main_tabs}}
