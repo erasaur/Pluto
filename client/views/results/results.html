@@ -6,66 +6,38 @@
       {{#if loadingResults}}
         {{> loading}}
       {{else}}
-        {{#if results}}
-	        <table width="100%">
-	        	<tr>
-	        		<td>
-	        			<div class="row">
-	        				<div class="col">
-	        					<div class="panel original">
-	        						<h4 class="panel-title">You Said</h4>
-	        						<p>{{results.original}}</p>
-	        					</div> 
-	        				</div>
-	        			</div>
-	        		</td>
-	        		<td>
-	        			<div clas="row">
-	        				<div class="col">
-	        					<div class="panel results">
-	        						<h4 class="panel-title">Emoji translation</h4>
-	        						<p><span style="content: {{results.emoji}}"></span></p>
-	        					</div>
-	        				</div>
-	        			</div>
-	        		</td>
-	        	</tr>
-	        </table>
+        {{#if results.original}}
+          <div class="padded row">
+          	<div class="col">
+          		<div class="panel original">
+            		<h4 class="panel-title">You Said:</h4>
+            		<p>{{results.original}}</p>
+            	</div> 
+          	</div>
+          	<div class="col">
+          		<div class="panel results">
+            		<h4 class="panel-title">Emoji translation:</h4>
+                {{#if results.emoji}}
+            		  <p><span style="content: {{results.emoji}}"></span></p>
+                {{else}}
+                  <p>{{results.original}}</p>
+                  <p><small>(We couldn't find a match 😞)</small></p>
+                {{/if}}
+            	</div>
+            </div>
+          </div>
+        {{/if}}
 
-	        {{#if results.original}}
-	          <div class="padded row">
-	          	<div class="col">
-	          		<div class="panel original">
-	            		<h4 class="panel-title">You Said:</h4>
-	            		<p>{{results.original}}</p>
-	            	</div> 
-	          	</div>
-	          	<div class="col">
-	          		<div class="panel results">
-	            		<h4 class="panel-title">Emoji translation:</h4>
-	                {{#if results.emoji}}
-	            		  <p><span style="content: {{results.emoji}}"></span></p>
-	                {{else}}
-	                  <p>{{results.original}}</p>
-	                  <p><small>(We couldn't find a match 😞)</small></p>
-	                {{/if}}
-	            	</div>
-	            </div>
-	          </div>
-
-	        {{/if}}
-
-	        {{#if past_results.length}}
-	          {{#each past_results}}
-	            <div class="panel">
-	              <h5 class="panel-title">Emoji translation</h5>
-	              <p>{{original}}</p>
-	            </div>
-	          {{/each}}
-	        {{else}}
-	          <div class="padded">No past results to show.</div>
-	        {{/if}}
-	    {{/if}}
+        {{#if past_results.length}}
+          {{#each past_results}}
+            <div class="panel">
+              <h5 class="panel-title">Emoji translation</h5>
+              <p>{{original}}</p>
+            </div>
+          {{/each}}
+        {{else}}
+          <div class="padded">No past results to show.</div>
+        {{/if}}
       {{/if}}
     {{/ionContent}}
   {{/ionView}}
