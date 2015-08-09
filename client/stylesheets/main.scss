@@ -34,25 +34,28 @@ body {
   color: #fff;
 }
 
-.button-capture-container {
-  @include calc("padding-top", "40% + #{$nav_height}");
-  width: 100%;
-}
+// .button-capture-container {
+//   @include calc("padding-top", "40% + #{$nav_height}");
+//   width: 100%;
+// }
 
 .button-capture {
-  background: none;
-  border: none;
-  margin: 0 auto;
-  display: block;
-  font-size: 90px;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background-color: rgba(84, 212, 222, 0.9);
-  color: #fff;
-  text-align: center;
+  // background: none;
+  // border: none;
+  // margin: 0 auto;
+  // display: block;
+  // font-size: 90px;
+  // width: 180px;
+  // height: 180px;
+  // border-radius: 50%;
+  // background-color: rgba(84, 212, 222, 0.9);
+  // color: #fff;
+  z-index: 999;
+  background-image: url('assets/microphone.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.button-capture span {
-  display: inline-block;
+.button-capture:active {
+  background-color: #000 !important;
 }
