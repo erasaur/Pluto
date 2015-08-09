@@ -6,6 +6,31 @@
       {{#if loadingResults}}
         {{> loading}}
       {{else}}
+        {{#if results}}
+        <table width="100%">
+        	<tr>
+        		<td>
+        			<div class="row">
+        				<div class="col">
+        					<div class="panel original">
+        						<h4 class="panel-title">You Said</h4>
+        						<p>{{results.original}}</p>
+        					</div> 
+        				</div>
+        			</div>
+        		</td>
+        		<td>
+        			<div clas="row">
+        				<div class="col">
+        					<div class="panel results">
+        						<h4 class="panel-title">Emoji translation</h4>
+        						<p><span style="content: {{results.emoji}}"></span></p>
+        					</div>
+        				</div>
+        			</div>
+        		</td>
+        	</tr>
+
         {{#if results.original}}
           <div class="padded row">
           	<div class="col">
@@ -26,6 +51,7 @@
             	</div>
             </div>
           </div>
+
         {{/if}}
 
         {{#if past_results.length}}
