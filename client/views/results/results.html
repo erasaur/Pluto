@@ -7,11 +7,11 @@
         {{> loading}}
       {{else}}
         {{#if results.original}}
-	        <div class="table-container">
+	        <div class="results-container">
 	          <div class="padded row">
 	          	<div class="col">
 	          		<div class="panel original">
-	            		<h4 class="panel-title">You Said:</h4>
+	            		<h4 class="panel-title">You said:</h4>
 	            		<p>{{results.original}}</p>
 	            	</div> 
 	          	</div>
@@ -43,4 +43,5 @@
       {{/if}}
     {{/ionContent}}
   {{/ionView}}
+
 </template>

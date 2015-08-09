@@ -44,6 +44,15 @@ Template.results.onCreated(function () {
   }
 });
 
+Template.results.onRendered(function() {
+    function hey () {
+      $('.sun')
+        .animate( { 'borderColor': "5px solid #fff" }, 2000)
+        .animate( { 'borderColor': "5px solid transparent" }, 2000, hey);
+    }
+    hey(); 
+});
+
 Template.results.helpers({
   loadingResults: function () {
     var template = Template.instance();
