@@ -22,27 +22,21 @@
   left: 50%;
   margin-left: -50px;
   margin-top:250px;
-  -webkit-animation: border-pulse 2s infinite alternate;
-  animation: border-pulse 2s infinite alternate;
+  -webkit-animation: border-pulse 1s infinite alternate;
+  animation: border-pulse 1s infinite alternate;
 }
 
 
 
 //Animation to changeb border color
 @-webkit-keyframes border-pulse {
-  0% {border-color: #348bbe;}
-  25% {border-color: #435291;}
-  50% {border-color: #672f85;}
-  75% {border-color: #8f3276;}
-  100% {border-color: #be347b;}
+  0% {border-color: #bdbdbd;}
+  100% {border-color: #424242;}
 }
 
 @keyframes border-pulse {
-  0% {border-color: #348bbe;}
-  25% {border-color: #435291;}
-  50% {border-color: #672f85;}
-  75% {border-color: #8f3276;}
-  100% {border-color: #be347b;}
+  0% {border-color: #424242;}
+  100% {border-color: #bdbdbd;}
 }
 
 
