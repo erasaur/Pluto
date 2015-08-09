@@ -43,6 +43,8 @@ Meteor.methods({
 
       if (_.has(dict, word)) {
         result += '\\' + dict[word] + ' '; // append unicode value to result
+      } else {
+        result += word; // append original text
       }
     });
 
