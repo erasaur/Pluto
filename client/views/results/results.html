@@ -25,18 +25,20 @@
         </div>
       {{/if}}
 
-      <div class="padded">
-        {{#if past_results.length}}
-          {{#each past_results}}
-            <div class="panel">
-              <h5 class="panel-title">{{{emoji}}}</h5>
-              <p>{{original}}</p>
-            </div>
-          {{/each}}
-        {{else}}
-          No past results to show.
-        {{/if}}
+      <div class="past-result">
+        <h4 class="uppercase panel-title"><small>Past Results</small></h4>
       </div>
+
+      {{#if past_results.length}}
+        {{#each past_results}}
+          <div class="panel past-result">
+            <h5 class="panel-title">{{{emoji}}}</h5>
+            <p>{{original}}</p>
+          </div>
+        {{/each}}
+      {{else}}
+        <div class="padded">No past results to show.</div>
+      {{/if}}
     {{/ionContent}}
   {{/ionView}}
 
