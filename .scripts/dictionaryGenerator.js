@@ -11,7 +11,7 @@ var res = arr.map(function (emoji) {
     dict[emoji.name] = values;
   }
   emoji.short_names.forEach(function (sn) {
-    dict[sn] = values;
+    dict[sn.toUpperCase()] = values;
   });
 });
 
