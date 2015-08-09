@@ -26,20 +26,6 @@ Template.capture.events({
         if (error) {
           showError();
         } else {
-          // Meteor.call('textToUni', result, function (error, result) {
-          //   if (error) {
-          //     showError();
-          //   } else {
-          //     if (result[0] === '\\') {
-          //       template.results.set(result);
-          //     }
-          //     else {
-          //       // do translation
-          //       log('emoji translation failed bro. use gtranslate using language: ' + Session.get('preferred_language'));
-          //     }
-          //   }
-          // });
-
           Router.go('results', { query: 'text=' + encodeURIComponent(result) });
         }
       });
