@@ -3,10 +3,21 @@
 
   {{#ionBody}}
     {{#ionContent}}
-      <div class="button-capture-container">
-        <button class="button-capture" id="js-capture"><span class="ion-android-microphone" style="
-"></span></button>
+
+      <div class="solarsystem-outer">
+        <div class="solarsystem">
+          <div class="button-capture sun" id="js-capture"></div>
+          <div class="planet mercury"></div>
+          <div class="planet venus"></div>
+          <div class="planet earth">
+            <div id="moon"></div>
+          </div>
+        </div>
       </div>
+
+      {{!-- <div class="button-capture-container">
+        <button class="button-capture" id="js-capture"></button>
+      </div> --}}
     {{/ionContent}}
   {{/ionBody}}
 </template>
