@@ -1,0 +1,113 @@
+.solarsystem-outer{
+  height:300px;
+  width:100%;
+}
+.solarsystem{
+  position:relative;
+  margin-top: 10%;
+  /*margin-top:200px;*/
+  /*margin-left:300px;*/
+  border:0;
+  opacity:.5;
+}
+.sun{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  position:absolute;
+  /*left:250px;*/
+  left: 50%;
+  margin-left: -50px;
+  margin-top:250px;
+}
+
+/* ORBIT LINES */
+.mercury{
+  width:200px;
+  height:200px;
+  position: absolute;
+  /*left: 200px;*/
+  margin-left: 50%;
+  left: -100px;
+  margin-top: 200px;
+  -webkit-animation:orbit 7.23s linear infinite;
+}
+.venus{
+  width:300px;
+  height:300px;
+  position: absolute;
+  /*left:150px;*/
+  margin-left: 50%;
+  left: -150px;
+  top:150px;
+  -webkit-animation:orbit 18.45s linear infinite;
+}
+.earth{
+  width:400px;
+  height:400px;
+  position: absolute;
+  margin-left: 50%;
+  left: -200px;
+  /*left:100px;*/
+  top:100px;
+  -webkit-animation:orbit 30s linear infinite;
+}
+.moon{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  position: absolute;
+  left:155px;
+  top:-18px;
+  -webkit-animation:orbit 2.4s linear infinite;
+}
+
+.planet{
+  border: 1px dashed #000;
+  border-radius:50%;
+}
+
+/*  ORBIT ANIMATION */
+@-webkit-keyframes orbit{
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+/* PLANETS */
+.mercury:after{
+  content:" ";
+  width:10px;
+  height:10px;
+  position:absolute;
+  top:-5px;
+}
+.venus:after{
+  content:" ";
+  width:20px;
+  height:20px;
+  position:absolute;
+  top:85px;
+  right:0;
+}
+.earth:after{
+  content:" ";
+  width:25px;
+  height:25px;
+  position:absolute;
+  top:-12px;
+}
+.moon:after{
+  content:" ";
+  width:8px;
+  height:8px;
+  position:absolute;
+  top:-12px;
+}
+
+/* PLANET COLOR */
+.sun, .mercury:after, .venus:after, .earth:after, .moon:after {
+  background:#000;
+}
+.mercury:after, .venus:after, .earth:after, .moon:after {
+  border-radius:50%;
+  margin-left:40%;
+}
