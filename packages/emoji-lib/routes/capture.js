@@ -1,4 +1,4 @@
 Router.route('/', {
   name: 'capture',
-  // layoutTemplate: 'main_layout'
+  layoutTemplate: 'main_layout'
 });
