@@ -24,8 +24,12 @@ Template.results.onCreated(function () {
       if (error) {
         showError();
       } else {
-        if (result[0] === '\\') {
-          newResult.emoji = result;
+        // if (result[0] === '\\') {
+        if (result.indexOf('png') > -1) {
+
+          console.log(result)
+
+          newResult.emoji = 'https://raw.githubusercontent.com/github/gemoji/master/images/emoji/unicode/' + result;
           self._results.set(newResult);
 
           // save to local persistent storage
@@ -35,7 +39,7 @@ Template.results.onCreated(function () {
           log('emoji translation failed bro. use gtranslate using language: ' + Session.get('preferred_language'));
 
           // TODO: translate with google translate
-          self._results.set(newResult);
+          self._results.add(newResult);
         }
 
         self._loading.set(false);

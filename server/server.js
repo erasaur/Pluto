@@ -42,7 +42,10 @@ Meteor.methods({
       word = word.trim();
 
       if (_.has(dict, word)) {
-        result += '\\' + dict[word] + ' '; // append unicode value to result
+        //result += '\\' + dict[word].unified + ' '; // append unicode value to result
+        result += dict[word].image + ' ';
+      } else {
+        result += word; // append original text
       }
     });
 

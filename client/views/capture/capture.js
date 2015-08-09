@@ -26,7 +26,7 @@ Template.capture.events({
         if (error) {
           showError();
         } else {
-          Router.go('results', { query: 'text=' + encodeURIComponent(result) });
+          Router.go('results', {}, { query: 'text=' + encodeURIComponent(result) });
         }
       });
     }
