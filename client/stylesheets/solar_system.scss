@@ -1,12 +1,14 @@
+@import 'client/stylesheets/includes.scss';
+
 .solarsystem-outer{
   height:300px;
   width:100%;
 }
 .solarsystem{
   position:relative;
-  margin-top: 10%;
   /*margin-top:200px;*/
   /*margin-left:300px;*/
+  margin-top: -$nav_height;
   border:0;
   opacity:.5;
 }
