@@ -11,6 +11,8 @@ $nav_height: 50px;
 
 body {
   background-image: url('assets/glossy_background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .nav {
@@ -28,19 +30,25 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
   height: $nav_height;
 }
+.bar .title {
+  color: #fff;
+}
 
 .button-capture-container {
   @include calc("padding-top", "40% + #{$nav_height}");
+  width: 100%;
 }
 
 .button-capture {
   background: none;
   border: none;
-  width: 100%;
   margin: 0 auto;
   display: block;
-}
-
-.button-capture img {
-  width: 230px;
+  font-size: 90px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: rgba(84, 212, 222, 0.9);
+  color: #fff;
+  text-align: center;
 }
