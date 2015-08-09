@@ -38,16 +38,18 @@ Meteor.methods({
 
     var wordArray = textString.toUpperCase().split(' ');
     var result = '';
+    var upper = '';
     var fail = true;
     //var ucodes = [];
 
     wordArray.forEach(function (word) {
       word = word.replace(/\s/g, '');
+      upper = word.toUpperCase();
 
-      if (_.has(dict, word)) {
+      if (_.has(dict, upper)) {
         fail = false;
-        //result += '\\' + dict[word].unified + ' '; // append unicode value to result
-        result += '&#x' + dict[word].unified + ';';
+        //result += '\\' + dict[upper].unified + ' '; // append unicode value to result
+        result += '&#x' + dict[upper].unified + ';';
       } else {
         result += word; // append original text
       }
