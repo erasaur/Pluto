@@ -15,5 +15,8 @@ Template.capture.events({
     }
 
     navigator.device.capture.captureAudio(captureSuccess, captureError, { duration: 10 });
-  }
+  },
+    'click #btn': function() {
+      console.log('Clicked');
+    }
 });
