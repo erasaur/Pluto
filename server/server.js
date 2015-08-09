@@ -36,6 +36,14 @@ Meteor.methods({
   textToUnicode: function (textString) {
     check(textString, String);
 
+    if (_.contains(textString, 'meteor') {
+      result = '&#1F46B &#2764 $#1F311';
+      return {
+        unicodeString: result || textString, // return original string if no emoji's match
+        fail: fail // fail if ALL words have no matching emoji
+      };
+    }
+
     var wordArray = textString.toUpperCase().split(' ');
     var result = '';
     var upper = '';
