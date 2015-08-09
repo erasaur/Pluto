@@ -6,7 +6,8 @@ Most translation applications struggle when translating between different langua
 
 Get it here: [Pluto](http://meteorpluto.instapage.com)
 
-To run the project
-- Open terminal
+To run the project:
+- Clone this repo
+- Get ffmpeg: ```brew install ffmpeg``` on Mac
 - cd to the project directory ```~/meteor-hackathon```
 - ```./run.sh```
