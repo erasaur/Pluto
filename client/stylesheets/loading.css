@@ -1,4 +1,15 @@
-#loading-bars {
+.loading-text {
+  color: #fff;
+  font: bold 12px 'helvetica neue', helvetica, arial, sans-serif;
+  left: 0;
+  padding: 6px;
+  margin: 20px 0 0 0;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+}
+.loading-bars {
   height: 30px;
   left: 50%;
   margin: -30px 0 0 -20px;
@@ -6,9 +17,8 @@
   top: 50%;
   width: 40px;
 }
-
 .loading-bar {
-  background: #666;
+  background: #fff;
   bottom: 1px;
   height: 3px;
   position: absolute;
