@@ -6,16 +6,21 @@ var arr = JSON.parse(fs.readFileSync('emoji_pretty.json'));
 var dict = [];
 
 var res = arr.map(function (emoji) {
-  values = {
-    "unified": emoji.unified,
-    "short_name": emoji.short_name,
-  },
-  dict.push({
-    key: emoji.name,
-    value: values
-  });
+  if (!emoji.name) {
+    keyShortName = emoji.short_name.split("-").join(" ").toUpperCase();
+    dict.push({
+      key: keyShortName,
+      value: emoji.unified
+    });
+  }
+  else {
+    dict.push({
+      key: emoji.name,
+      value: emoji.unified
+    })
+  }
 });
 
-fs.writeFile('emoji-processed.json', JSON.stringify(dict), function (error) {
+fs.writeFile('emoji_processed.json', JSON.stringify(dict), function (error) {
   console.log(error);
 });

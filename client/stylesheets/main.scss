@@ -15,6 +15,16 @@
   background: transparent;
 }
 
+.tabs {
+  color: #fff;
+  background: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  height: $nav_height;
+}
+
+
+
 .bar.bar-transparent {
   background: none;
   border: none;
@@ -47,6 +57,39 @@
   background-size: cover;
 }
 
+<<<<<<< HEAD
+/* results template styles */
+
+.pluto {
+  padding: 50px;
+  text-align: center;
+  color: #fff;
+}
+
+.original {
+  border-left: 2px solid #8BBDBD;
+}
+
+.original-title {
+  color: #fff;
+}
+
+.results {
+  border-left: 2px solid orange;
+}
+
+.results-title {
+  color: #fff;
+}
+
+.original, .results {
+  bottom: 0;
+  padding: 30px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+=======
 .button-capture:active {
   background-color: #000 !important;
 }
+>>>>>>> b0e956f0b7f4ba030dc50559f93025c28342e2d0
