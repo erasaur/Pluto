@@ -3,24 +3,37 @@
 
   {{#ionView}}
     {{#ionContent}}
-      <!-- <img src="assets/main_page.png" width="100%" > -->
-      <div class="pluto">
-      	<h1 class="pluto">Pluto-tize!</h1>
-      </div>
-      <div class="row">
-      	<div class="col">
-      		<div class="original">
-      		<h4 class="original-title">You Said</h4>
-      		<p>{{original_speech}}</p>
-      	</div> 
-      	</div>
-      	<div class="col">
-      		<div class="results">
-      		<h4 class="results-title">Emoji translation</h4>
-      		<p>{{emoticon_translation}}</p>
-      	</div>
-      	</div>
-      </div>
+      {{#if loadingResults}}
+        {{> loading}}
+      {{else}}
+        {{#if results}}
+          <div class="row">
+          	<div class="col">
+          		<div class="panel original">
+            		<h4 class="panel-title">You Said</h4>
+            		<p>{{results.original}}</p>
+            	</div> 
+          	</div>
+          	<div class="col">
+          		<div class="panel results">
+            		<h4 class="panel-title">Emoji translation</h4>
+            		<p><span style="content: {{results.emoji}}"></span></p>
+            	</div>
+            </div>
+          </div>
+        {{/if}}
+
+        {{#if past_results.length}}
+          {{#each past_results}}
+            <div class="panel">
+              <h5 class="panel-title">Emoji translation</h5>
+              <p>{{original}}</p>
+            </div>
+          {{/each}}
+        {{else}}
+          <div class="padded">No past results to show.</div>
+        {{/if}}
+      {{/if}}
     {{/ionContent}}
   {{/ionView}}
 </template>
