@@ -28,16 +28,18 @@
           </div>
         {{/if}}
 
-        {{#if past_results.length}}
-          {{#each past_results}}
-            <div class="panel">
-              <h5 class="panel-title">Emoji translation</h5>
-              <p>{{original}}</p>
-            </div>
-          {{/each}}
-        {{else}}
-          <div class="padded">No past results to show.</div>
-        {{/if}}
+        <div class="padded">
+          {{#if past_results.length}}
+            {{#each past_results}}
+              <div class="panel">
+                <h5 class="panel-title">Emoji translation</h5>
+                <p>{{original}}</p>
+              </div>
+            {{/each}}
+          {{else}}
+            No past results to show.
+          {{/if}}
+        </div>
       {{/if}}
     {{/ionContent}}
   {{/ionView}}
