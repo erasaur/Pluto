@@ -9,6 +9,10 @@ $nav_height: 50px;
   #{$key}: calc(#{$value});
 }
 
+body {
+  background-image: url('assets/glossy_background.png');
+}
+
 .nav {
   height: $nav_height;
 }
@@ -23,11 +27,6 @@ $nav_height: 50px;
   border: none;
   background-color: rgba(255, 255, 255, 0.2);
   height: $nav_height;
-}
-
-#bg {
-  z-index: -99;
-  position: absolute;
 }
 
 .button-capture-container {
