@@ -7,17 +7,11 @@ var dict = {};
 var res = arr.map(function (emoji) {
   var values = { image: emoji.image, unified: emoji.unified };
 
-  if (emoji.name && !dict[emoji.name]) {
+  if (emoji.name) {
     dict[emoji.name] = values;
   }
   emoji.short_names.forEach(function (sn) {
-    // var keyShortName = emoji.short_name.split('_').join(' ').toUpperCase();
-    // if (!dict[keyShortName]) {
-    //   dict[keyShortName] = values;
-    // }
-    if (!dict[emoji.short_name]) {
-      dict[emoji.short_name] = values;
-    }
+    dict[sn] = values;
   });
 });
 
