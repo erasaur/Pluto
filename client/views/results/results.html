@@ -7,36 +7,6 @@
         {{> loading}}
       {{else}}
         {{#if results.original}}
-<<<<<<< HEAD
-	        <div class="results-container">
-	          <div class="padded row">
-	          	<div class="col">
-	          		<div class="panel original">
-	            		<h4 class="panel-title">You said:</h4>
-	            		<p>{{results.original}}</p>
-	            	</div> 
-	          	</div>
-	          	<div class="col">
-	          		<div class="panel results">
-	            		<h4 class="panel-title">Emoji translation:</h4>
-	                {{#if results.emoji}}
-	            		  <p><span style="content: {{results.emoji}}"></span></p>
-	                {{else}}
-	                  <p>{{results.original}}</p>
-	                  <p><small>(We couldn't find a match 😞)</small></p>
-	                {{/if}}
-	            	</div>
-	            </div>
-	          </div>
-	       </div>
-        {{/if}}
-
-        {{#if past_results.length}}
-          {{#each past_results}}
-            <div class="panel">
-              <h5 class="panel-title">Emoji translation</h5>
-              <p>{{original}}</p>
-=======
           <div class="padded row">
           	<div class="col">
           		<div class="panel original">
@@ -54,7 +24,6 @@
                   <p><small>(We couldn't find a match 😞)</small></p>
                 {{/if}}
             	</div>
->>>>>>> 774616fcb8f8b8eaf1fee95446389f827fe60f6b
             </div>
           </div>
         {{/if}}
