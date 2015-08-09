@@ -1,17 +1,12 @@
 <template name="capture">
-  {{!-- {{> capture_nav}} --}}
+  {{> capture_nav}}
 
   {{#ionBody}}
     {{#ionContent}}
-      <button class="button button-positive" id="js-capture">Capture</button>
-      <div>
-    <img id="bg" src="assets/recordingsPage.png" height="auto" width="100%">
-    <div class="btn-wrap">
-      <button id="btn"><img id="btn" src="assets/1439082535_voice_search.png"></button>
-    </div>
-    
-  </div>
+      <img id="bg" src="assets/recordingsPage.png" height="auto" width="100%">
+      <div class="button-capture-container">
+        <button class="button-capture" id="js-capture"><img id="btn" src="assets/1439082535_voice_search.png"></button>
+      </div>
     {{/ionContent}}
-
   {{/ionBody}}
 </template>
