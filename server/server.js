@@ -47,12 +47,14 @@ Meteor.methods({
       if (_.has(dict, word)) {
         fail = false;
         //result += '\\' + dict[word].unified + ' '; // append unicode value to result
-        result += '<img src="https://raw.githubusercontent.com/github/gemoji/master/images/emoji/unicode/' + dict[word].image + '">';
+        result += '&#x' + dict[word].unified + ';';
       } else {
         result += word; // append original text
       }
       result += ' ';
     });
+
+    console.log(result || textString);
 
     return {
       unicodeString: result || textString, // return original string if no emoji's match
